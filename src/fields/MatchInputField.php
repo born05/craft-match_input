@@ -67,7 +67,7 @@ class MatchInputField extends PlainText
      */
     public static function displayName(): string
     {
-        return Craft::t('match-input', 'Match Input');
+        return Craft::t('matchinput', 'Match Input');
     }
 
     // Public Methods
