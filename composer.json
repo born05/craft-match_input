@@ -9,12 +9,12 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Marion Newlevant",
-      "homepage": "http://marion.newlevant.com"
-    },
-    {
       "name": "Born05",
       "homepage": "https://www.born05.com/"
+    },
+    {
+      "name": "Marion Newlevant",
+      "homepage": "http://marion.newlevant.com"
     }
   ],
   "require": {
