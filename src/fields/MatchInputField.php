@@ -31,10 +31,12 @@ class MatchInputField extends PlainText
 {
     public static function validateRegex($regex)
     {
-        set_error_handler(function() { return true; }, E_NOTICE);
-        // preg_match() returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
-        $valid = (preg_match($regex, '') !== false);
-        restore_error_handler();
+        try {
+            // preg_match() returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+            $valid = (preg_match($regex, '') !== false);
+        } catch (\Exception $e) {
+            $valid = false;
+        }
 
         return $valid;
     }
@@ -128,7 +130,7 @@ class MatchInputField extends PlainText
     /**
      * @inheritdoc
      */
-    protected function inputHtml(mixed $value, ?ElementInterface $element = null): string
+    protected function inputHtml(mixed $value, ?ElementInterface $element = null, bool $inline = false): string
     {
         return Craft::$app->getView()->renderTemplate(
             'match-input/_components/fields/MatchInputField_input',
@@ -147,25 +149,7 @@ class MatchInputField extends PlainText
     {
         $rules = parent::getElementValidationRules();
         // add our rule
-        $rules[] = 'validateMatchesRegex';
+        $rules[] = ['match', 'pattern' => $this->inputMask];
         return $rules;
-    }
-
-    /**
-     * Validates the field value.
-     *
-     * @param ElementInterface $element
-     * @param array|null       $params
-     *
-     * @return void
-     */
-    public function validateMatchesRegex(ElementInterface $element): void
-    {
-        $value = $element->getFieldValue($this->handle);
-        $match = preg_match($this->inputMask, $value);
-        if ($match !== 1)
-        {
-            $element->addError($this->handle, Craft::t('site', $this->errorMessage));
-        }
     }
 }
