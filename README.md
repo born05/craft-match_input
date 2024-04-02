@@ -1,4 +1,4 @@
-# Match Input plugin for Craft CMS 4.x
+# Match Input plugin for Craft CMS 4.x and 5.x
 
 Craft field type for text fields that match a regex pattern.
 
@@ -6,14 +6,14 @@ Craft field type for text fields that match a regex pattern.
 
 To install Match Input, follow these steps:
 
-1. Install with Composer via `composer require marionnewlevant/match-input` from your project directory
+1. Install with Composer via `composer require born05/craft-matchinput` from your project directory
 2. Install plugin in the Craft Control Panel under Settings > Plugins
 
 or
 
 1. Install via the Plugin Store
 
-Match Input works on Craft 4.x.
+Match Input works on Craft 4.x and Craft 5.x.
 
 ## Match Input Overview
 
@@ -40,5 +40,4 @@ will be in the `site` translation category.
 - `/^\d{5}(-\d{4})?$/` - will match 5 digits, optionally followed by `-` and 4 digits (uses ^ and $ to match the entire string)
 
 ## Acknowledgements
-Brought to you by [Marion Newlevant](http://marion.newlevant.com).
-Icon interior by SlideGenius from the Noun Project
+Forked from [Marion Newlevant's Match Input](https://github.com/marionnewlevant/craft-match_input) plugin.

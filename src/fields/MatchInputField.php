@@ -1,32 +1,12 @@
 <?php
-/**
- * Match Input plugin for Craft CMS 3.x
- *
- * Craft field type for text fields that match a regex pattern
- *
- * @link      http://marion.newlevant.com
- * @copyright Copyright (c) 2017 Marion Newlevant
- */
 
-namespace marionnewlevant\matchinput\fields;
+namespace born05\matchinput\fields;
 
 use Craft;
 use craft\base\ElementInterface;
 use craft\fields\PlainText;
+use craft\helpers\StringHelper;
 
-/**
- *  Field
- *
- * Whenever someone creates a new field in Craft, they must specify what
- * type of field it is. The system comes with a handful of field types baked in,
- * and we’ve made it extremely easy for plugins to add new ones.
- *
- * https://craftcms.com/docs/plugins/field-types
- *
- * @author    Marion Newlevant
- * @package   MatchInput
- * @since     1.0.0
- */
 class MatchInputField extends PlainText
 {
     public static function validateRegex($regex)
@@ -120,7 +100,7 @@ class MatchInputField extends PlainText
     public function getSettingsHtml(): ?string
     {
         return Craft::$app->getView()->renderTemplate(
-            'match-input/_components/fields/MatchInputField_settings',
+            'matchinput/_components/fields/settings',
             [
                 'field' => $this
             ]
@@ -133,11 +113,13 @@ class MatchInputField extends PlainText
     protected function inputHtml(mixed $value, ?ElementInterface $element = null, bool $inline = false): string
     {
         return Craft::$app->getView()->renderTemplate(
-            'match-input/_components/fields/MatchInputField_input',
+            'matchinput/_components/fields/input',
             [
                 'name' => $this->handle,
                 'value' => $value,
                 'field' => $this,
+                'placeholder' => $this->placeholder !== null ? Craft::t('site', StringHelper::unescapeShortcodes($this->placeholder)) : null,
+                'orientation' => $this->getOrientation($element),
             ]
         );
     }

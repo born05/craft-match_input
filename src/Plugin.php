@@ -1,21 +1,11 @@
 <?php
-/**
- * Match Input plugin for Craft CMS 3.x
- *
- * Craft field type for text fields that match a regex pattern
- *
- * @link      http://marion.newlevant.com
- * @copyright Copyright (c) 2017 Marion Newlevant
- */
 
-namespace marionnewlevant\matchinput;
+namespace born05\matchinput;
 
-
-use Craft;
 use craft\services\Fields;
 use craft\events\RegisterComponentTypesEvent;
 use yii\base\Event;
-use marionnewlevant\matchinput\fields\MatchInputField;
+use born05\matchinput\fields\MatchInputField;
 
 /**
  *

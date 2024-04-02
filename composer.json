@@ -1,7 +1,7 @@
 {
-  "name": "marionnewlevant/match-input",
+  "name": "born05/craft-matchinput",
   "description": "Craft field type for text fields that match a regex pattern",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "type": "craft-plugin",
   "keywords": [
     "craft", "craftcms", "craft-plugin", "match input"
@@ -11,6 +11,10 @@
     {
       "name": "Marion Newlevant",
       "homepage": "http://marion.newlevant.com"
+    },
+    {
+      "name": "Born05",
+      "homepage": "https://www.born05.com/"
     }
   ],
   "require": {
@@ -18,18 +22,16 @@
   },
   "autoload": {
     "psr-4": {
-      "marionnewlevant\\matchinput\\": "src/"
+      "born05\\matchinput\\": "src/"
     }
   },
   "extra": {
     "name": "Match Input",
-    "handle": "match-input",
-    "version": "2.0.1",
-    "schemaVersion": "1.0.0",
+    "handle": "matchinput",
     "hasSettings": false,
     "hasCpSection": false,
-    "documentationUrl": "https://github.com/marionnewlevant/craft-match_input/blob/v2/README.md",
-    "changelogUrl": "https://raw.githubusercontent.com/marionnewlevant/craft-match_input/v2/CHANGELOG.md"
+    "documentationUrl": "https://github.com/born05/craft-matchinput/blob/main/README.md",
+    "changelogUrl": "https://raw.githubusercontent.com/born05/craft-matchinput/main/CHANGELOG.md"
   },
   "config": {
     "allow-plugins": {

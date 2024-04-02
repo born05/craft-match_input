@@ -1,6 +1,5 @@
 <?php
 return [
-    'MatchInput' => 'MatchInput',
     'Match Input' => 'Match Input',
     'Not a valid regex (missing delimiters?)' => 'Not a valid regex (missing delimiters?)',
     'Input Mask' => 'Input Mask',
